@@ -1,43 +1,64 @@
+/*
+ * Circle class for the Inheritance Workshop
+ */
 public class Circle {
-    // private instance variables
+    // Private instance variables
     private double radius;
     private String color;
- 
-    // Constructors
+
+    
+    // No-arg constructor
     public Circle() {
-       this.radius = 1.0;
-       this.color = "red";
+        this.radius = 1.0;
+        this.color = "red";
     }
+
+    // Constructor with radius only
     public Circle(double radius) {
-       this.radius = radius;
-       this.color = "red";
+        this.radius = radius;
+        this.color = "red";
     }
+
+    // Constructor with radius and color
     public Circle(double radius, String color) {
-       this.radius = radius;
-       this.color = color;
+        this.radius = radius;
+        this.color = color;
     }
- 
-    // Getters and Setters
+
     public double getRadius() {
-       return this.radius;
+        return this.radius;
     }
-    public String getColor() {
-       return this.color;
-    }
+
     public void setRadius(double radius) {
-       this.radius = radius;
+        this.radius = radius;
     }
+
+    public String getColor() {
+        return this.color;
+    }
+
     public void setColor(String color) {
-       this.color = color;
+        this.color = color;
     }
- 
-    // Describle itself
+
+    // Describe the Circle
+    @Override
     public String toString() {
-       return String.format("Circle[radius=%.2f,color=%s]", radius, color);
+        return String.format("Circle[radius=%.2f,color=%s]", radius, color);
     }
- 
-    // Return the area of this Circle
+
+    // Return the area of the Circle
     public double getArea() {
-       return radius * radius * Math.PI;
+        return Math.PI * radius * radius;
     }
- }
+
+    // Instance method for class info (for polymorphism test)
+    public void printClassInfo() {
+        System.out.println("It is a Circle class");
+    }
+
+    // Static method for class info (for polymorphism test)
+    public static void printClassInfoStatic() {
+        System.out.println("It is a Circle class");
+    }
+}
